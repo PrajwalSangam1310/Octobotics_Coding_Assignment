@@ -20,6 +20,15 @@ add_service_files(
 generate_messages(
   DEPENDENCIES
 )
+catkin_install_python(PROGRAMS scripts/goal1_solution.py
+                      DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+                      
+catkin_install_python(PROGRAMS scripts/goal2_solution.py
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
+catkin_install_python(PROGRAMS scripts/goal3_solution.py
+DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
 
 catkin_package(CATKIN_DEPENDS message_generation rospy  message_runtime)
 install(FILES)
