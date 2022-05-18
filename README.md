@@ -23,8 +23,12 @@
 ## Ros
 
 - Ros noetic is used
-- Three scripts were created each one for each goal.
+- **Changed the inverted_pendulum_sim_node script to work with python3**
+- Three scripts were created one for each goal.
 - Each scripts solves only for that particular goal.
+
+## Issues
+- I had to presource some other catkin workspace, before building this workspace.
 
 ## Inverted Pendulum solution scripts.
   - goal1_solution.py for goal 1
