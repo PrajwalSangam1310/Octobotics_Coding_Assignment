@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # /* ------------- COPYRIGHT NOTICE ---------------
 #
 # Copyright (C) 2022 Octobotics Tech Pvt. Ltd. All Rights Reserved.
@@ -195,12 +195,12 @@ class InvertedPendulum:
         pg.draw.rect(DISPSURFACE, CARTCOLOR, (x, y, self.cart_w, self.cart_h))
         pg.draw.rect(DISPSURFACE, BLACK, (x, y, self.cart_w, self.cart_h), 3)
 
-        pg.draw.circle(DISPSURFACE, BLACK, (x, y + self.cart_h / 2 + 4 * self.wheel_r), 2 * self.wheel_r, 7)
-        pg.draw.circle(DISPSURFACE, WHEELCOLOR, (x, y + self.cart_h / 2 + 4 * self.wheel_r), 2 * (self.wheel_r - 3.5))
-        pg.draw.circle(DISPSURFACE, BLACK, (x + self.cart_w, y + self.cart_h / 2 + 4 * self.wheel_r), 2 * self.wheel_r,
+        pg.draw.circle(DISPSURFACE, BLACK, (int(x), int(y + self.cart_h / 2 + 4 * self.wheel_r)), int(2 *self.wheel_r), 7)
+        pg.draw.circle(DISPSURFACE, WHEELCOLOR, (int(x), int(y + self.cart_h / 2 + 4 * self.wheel_r)), int(2 * (self.wheel_r - 3.5)))
+        pg.draw.circle(DISPSURFACE, BLACK, (int(x + self.cart_w), int(y + self.cart_h / 2 + 4 * self.wheel_r)), int(2 * self.wheel_r),
                        7)
-        pg.draw.circle(DISPSURFACE, WHEELCOLOR, (x + self.cart_w, y + self.cart_h / 2 + 4 * self.wheel_r),
-                       2 * (self.wheel_r - 3.5))
+        pg.draw.circle(DISPSURFACE, WHEELCOLOR, (int(x + self.cart_w), int(y + self.cart_h / 2 + 4 * self.wheel_r)),
+                       int(2 * (self.wheel_r - 3.5)))
 
     def pendulum(self):
         """
@@ -209,16 +209,16 @@ class InvertedPendulum:
         """
         x = self.x + SCREENSIZE[0] / 2
 
-        pg.draw.line(DISPSURFACE, PENDULUMCOLOR, (x, self.y),
-                     (x + self.length * sin(self.theta), self.y + self.length * cos(self.theta)), 10)
+        pg.draw.line(DISPSURFACE, PENDULUMCOLOR, (int(x), int(self.y)),
+                     (int(x + self.length * sin(self.theta)), int(self.y + self.length * cos(self.theta))), 10)
 
         pg.draw.circle(DISPSURFACE, BLOBCOLOR,
-                       (x + self.length * sin(self.theta), self.y + self.length * cos(self.theta)), 25)
+                       (int(x + self.length * sin(self.theta)), int(self.y + self.length * cos(self.theta))), 25)
         pg.draw.circle(DISPSURFACE, BLACK,
-                       (x + self.length * sin(self.theta), self.y + self.length * cos(self.theta)), 25, 4)
+                       (int(x + self.length * sin(self.theta)), int(self.y + self.length * cos(self.theta))), 25, 4)
 
         # draw a circle centered at x, y
-        pg.draw.circle(DISPSURFACE, RED, (x, self.y), 10)
+        pg.draw.circle(DISPSURFACE, RED, (int(x), int(self.y)), 10)
 
     def update(self):
         """
