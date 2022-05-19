@@ -29,6 +29,7 @@
 
 ## Issues
 - I had to presource some other catkin workspace, before building this workspace.
+- As I was using ros noetic, I had to change the syntax of simulation script.
 
 ## Inverted Pendulum solution scripts.
   - goal1_solution.py for goal 1
